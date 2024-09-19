@@ -13,15 +13,37 @@
      <header class="container max-w-5xl mx-auto " >
        <!-- Navbar -->
       <div class="flex justify-around items-center bg-rose-500 rounded-full p-4 gap-3">
-        <div class="  font-normal text-sm text-white ">
-          <nav class="flex gap-3 max-md:hidden " >
+        <div class="font-normal text-sm text-white">
+          <!-- Navbar container -->
+          <nav class="flex gap-3 max-md:hidden" id="navMenu">
             <h4>Home</h4>
             <h4>About</h4>
             <h4>Shop</h4>
             <h4>All Fruits</h4>
           </nav>
-          <i  class="fa-solid fa-bars hidden max-md:flex " ></i>
-          </div>
+          
+          <!-- Hamburger icon for mobile -->
+          <i class="fa-solid fa-bars hidden max-md:flex cursor-pointer relative z-50" id="hamburger"></i>
+
+        </div>
+       <script>
+         hamburger.addEventListener('click', () => {
+          console.log('Hamburger clicked');
+          navMenu.classList.toggle('hidden');
+          navMenu.classList.toggle('flex');
+        });
+        hamburger.addEventListener('click', () => {
+          console.log('Hamburger clicked');
+          if (navMenu.style.display === 'none' || navMenu.style.display === '') {
+            navMenu.style.display = 'flex';
+          } else {
+            navMenu.style.display = 'none';
+          }
+        });
+       </script>
+        
+       
+        
           <div class="flex items-center gap-2 text-white text-xl font-bold">
             <img src="./assets/logo.png" alt="">
             <h3>Fruit Brust</h3>
@@ -96,23 +118,23 @@
          </div>
           <!-- Fruit Categories -->
          <div class="flex  lg:flex-row items-center max-md:hidden p-2 -mt-24 shadow-xl mx-auto justify-center">
-          <div class="card rounded-none  bg-base-100 items-center ">
+          <div class="card rounded-none w-36 bg-base-100 items-center ">
               <img src="./assets/fruit1.png" alt="" />
               <h4 class="text-normal">Strawberry</h4>
           </div>
-          <div class="card rounded-none  w-48 bg-base-100 items-center ">
+          <div class="card rounded-none  w-36 bg-base-100 items-center ">
           <img src="./assets/fruit2.png" alt="" />
               <h4 class="text-normal">Orange</h4>
           </div>
-          <div class="card rounded-none w-48 bg-base-100 items-center ">
+          <div class="card rounded-none w-40 bg-base-100 items-center ">
               <img src="./assets/fruit3.png" alt="" />
               <h4 class="text-normal">Mango</h4>
           </div>
-          <div class="card rounded-none  w-48 bg-base-100 items-center ">
+          <div class="card rounded-none  w-36 bg-base-100 items-center ">
               <img src="./assets/fruit4.png" alt="" />
               <h4 class="text-normal">Strawberry</h4>
           </div>
-          <div class="card rounded-none w-48 bg-base-100 items-center">
+          <div class="card rounded-none w-36 bg-base-100 items-center">
                 <img src="./assets/fruit5.png" alt="" />
                <h4 class="text-normal">Mango</h4>
           </div>
@@ -401,12 +423,6 @@
                  </div>
       </div>
   </footer>
-  <script>
-    document.getElementById("click-icon").addEventListener("click", function () {
-    const menuList = document.getElementById("menu-list");
-    menuList.classList.toggle("show");
-    });
-
-  </script>
+  
 </body>
 </html>
